@@ -1,8 +1,11 @@
 package com.learn.spring.RecipeProject.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Data
 @Entity
 public class Ingredient {
 
@@ -24,36 +27,5 @@ public class Ingredient {
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure uom;
 
-    public UnitOfMeasure getUom() {
-        return uom;
-    }
 
-
-    public void setUom(UnitOfMeasure uom) {
-        this.uom = uom;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
 }
